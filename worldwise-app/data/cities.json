@@ -1,0 +1,64 @@
+{
+  "cities": [
+    {
+      "cityName": "Berlin",
+      "country": "Germany",
+      "emoji": "🇩🇪",
+      "date": "2027-02-12T09:24:11.863Z",
+      "notes": "Amazing 😃",
+      "position": {
+        "lat": 52.53586782505711,
+        "lng": 13.376933665713324
+      },
+      "id": 98443197
+    },
+    {
+      "cityName": "London",
+      "country": "United Kingdom of Great Britain and Northern Ireland (the)",
+      "emoji": "🇬🇧",
+      "date": "2023-11-19T20:49:30.033Z",
+      "notes": "",
+      "position": {
+        "lat": 51.50874245880335,
+        "lng": -0.13183593750000003
+      },
+      "id": 98443198
+    },
+    {
+      "cityName": "Paris",
+      "country": "France",
+      "emoji": "🇫🇷",
+      "date": "2023-11-19T21:25:23.939Z",
+      "notes": "Amazing indeed",
+      "position": {
+        "lat": 48.88398338967086,
+        "lng": 2.3876957595348363
+      },
+      "id": 98443200
+    },
+    {
+      "cityName": "Groningen",
+      "country": "Netherlands (the)",
+      "emoji": "🇳🇱",
+      "date": "2023-11-19T21:53:03.166Z",
+      "notes": "Thrilling",
+      "position": {
+        "lat": 53.22247975316637,
+        "lng": 6.575317382812501
+      },
+      "id": 98443203
+    },
+    {
+      "cityName": "Edlesborough",
+      "country": "United Kingdom of Great Britain and Northern Ireland (the)",
+      "emoji": "🇬🇧",
+      "date": "2023-12-13T10:29:49.999Z",
+      "notes": "crazy",
+      "position": {
+        "lat": 51.83577752045248,
+        "lng": -0.5493164062500001
+      },
+      "id": 98443204
+    }
+  ]
+}
