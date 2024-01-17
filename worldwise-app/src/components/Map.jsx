@@ -21,8 +21,8 @@ import Flag from "./Flag.jsx";
 function Map() {
   // const navigate = useNavigate();
   const { cities } = useLocalCities();
-  const [mapPosition, setMapPosition] = useState([0, 0]);
-  const { position: geolocationPosition, getPosition } = useGeolocation();
+  const [mapPosition, setMapPosition] = useState([40, 0]);
+  const { position: geolocationPosition, getPosition, isLoading: isLoadingPosition } = useGeolocation();
 
   const [mapLat, mapLng] = useUrlPosition();
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -47,14 +47,13 @@ function Map() {
 
   return (
     <>
-      <Sidebar
-        isSidebarOpen={isSidebarOpen}
-        setIsSidebarOpen={setIsSidebarOpen}
-      />
+      <Sidebar isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
       <div className={styles.mapContainer}>
-        <Button type="position" onClick={getPosition}>
-          Use your position
-        </Button>
+        {!geolocationPosition && (
+          <Button type="position" onClick={getPosition}>
+            {isLoadingPosition ? 'Loading...' : 'Use your position'}
+          </Button>
+        )}
         <MapContainer
           center={[mapLat, mapLng]}
           zoom={6}
@@ -68,12 +67,9 @@ function Map() {
           />
           <ZoomControl position="topright" />
           {cities.map((city) => (
-            <Marker
-              position={[city.position.lat, city.position.lng]}
-              key={city.id}
-            >
+            <Marker position={[city.position.lat, city.position.lng]} key={city.id}>
               <Popup>
-                <span style={{ maxHeight: "2.8rem", height: "2.8rem" }}>
+                <span style={{ maxHeight: '2.8rem', height: '2.8rem' }}>
                   <Flag countryCode={city.countryCode} />
                 </span>
                 <span>{city.cityName}</span>
@@ -82,10 +78,7 @@ function Map() {
           ))}
           <ChangeCenter position={mapPosition} />
           <DetectClick />
-          <ToggleSideBar
-            isSidebarOpen={isSidebarOpen}
-            setIsSidebarOpen={setIsSidebarOpen}
-          />
+          <ToggleSideBar isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
         </MapContainer>
       </div>
     </>

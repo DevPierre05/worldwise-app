@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export function useGeolocation(defaultPosition = {lat:51.41291212935532, lng:-0.10986328125000001}) {
+export function useGeolocation(defaultPosition = null) {
   const [isLoading, setIsLoading] = useState(false);
   const [position, setPosition] = useState(defaultPosition);
   const [error, setError] = useState(null);
