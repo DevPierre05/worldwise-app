@@ -33,7 +33,7 @@ function City() {
     <div className={styles.city}>
       <div className={styles.row}>
         <h6>City name</h6>
-        <h3>
+        <h3 className={styles.cityFlag}>
           <span>
             <Flag countryCode={countryCode} />
           </span>

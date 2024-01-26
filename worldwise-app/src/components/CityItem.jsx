@@ -23,15 +23,15 @@ function CityItem({ city }) {
   return (
     <li>
       <Link
-        className={`${styles.cityItem} ${
-          id === currentCity.id ? styles["cityItem--active"] : ""
-        }`}
+        className={`${styles.cityItem} ${id === currentCity.id ? styles['cityItem--active'] : ''}`}
         to={`${id}?lat=${position.lat}&lng=${position.lng}`}
       >
-        <span className={styles.flag}>
-          <Flag countryCode={countryCode} />
-        </span>
-        <h3 className={styles.name}>{cityName}</h3>
+        <h4>
+          <span className={styles.flag}>
+            <Flag countryCode={countryCode} />
+          </span>
+          <h3 className={styles.name}>{cityName}</h3>
+        </h4>
         <time className={styles.date}>{formatDate(date)}</time>
         <button className={styles.deleteBtn} onClick={handleClick}>
           &times;
